@@ -68,6 +68,12 @@ pub struct BinaryFuse16 {
     pub fingerprints: Box<[u16]>,
 }
 
+// NewBinaryFuse16 returns an initialized BinaryFuse16 filter. Useful, if the values are stored externally.
+fn NewBinaryFuse16(seed: u64, segment_length: u32, segment_length_mask: u32, segment_count_length: u32, fingerprints: Box<[u16]>) -> BinaryFuse16 {
+    // TODO: It would be good to have a way to validate these fields.
+    BinaryFuse16 { seed, segment_length, segment_length_mask, segment_count_length, fingerprints }
+}
+
 impl Filter<u64> for BinaryFuse16 {
     /// Returns `true` if the filter contains the specified key.
     /// Has a false positive rate of <0.4%.
