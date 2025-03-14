@@ -96,6 +96,8 @@ mod xor8;
 #[cfg(feature = "binary-fuse")]
 pub use bfuse16::BinaryFuse16;
 #[cfg(feature = "binary-fuse")]
+pub use bfuse16::new_binary_fuse16;
+#[cfg(feature = "binary-fuse")]
 pub use bfuse32::BinaryFuse32;
 #[cfg(feature = "binary-fuse")]
 pub use bfuse8::BinaryFuse8;
